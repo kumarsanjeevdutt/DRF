@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'api',
     'employees',
     'blogs',
+    'django_filters',
 
 ]
 
@@ -131,5 +132,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Global Pagination(This can be only used with viewsets and genrics)
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
-    'PAGE_SIZE': 2
+    'PAGE_SIZE': 2,
+    #global Filetering
+    'DEFAULT_FILTER_BACKENDS':['django_filters.rest_framework.DjangoFilterBackend'],
+    'SEARCH_PARAM':'q',
 }
